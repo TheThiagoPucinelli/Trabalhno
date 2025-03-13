@@ -3,17 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variações de align-items</title>
+    <title>Variações de Flexbox</title>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-    <h1>Variações de align-items</h1>
+    <h1>Variações de Flexbox</h1>
 
-    <!-- TESTE1 - align-items: flex-start -->
-    <!-- Alinha os itens no início do eixo transversal (topo no caso do layout horizontal) -->
-    <h2>TESTE1 - align-items: flex-start</h2>
+    <!-- TESTE1 - flex-direction: row -->
+    <!-- flex-direction: row alinha os itens horizontalmente, da esquerda para a direita (padrão). -->
+    <h2>TESTE1 - flex-direction: row</h2>
+    <section>
+        <div class="container row">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </section>
+
+    <!-- TESTE2 - flex-direction: column -->
+    <!-- flex-direction: column alinha os itens verticalmente, de cima para baixo. -->
+    <h2>TESTE2 - flex-direction: column</h2>
+    <section>
+        <div class="container column">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </section>
+
+    <!-- TESTE3 - justify-content: flex-start -->
+    <!-- justify-content: flex-start alinha os itens no início do eixo principal (no caso de row, alinha à esquerda). -->
+    <h2>TESTE3 - justify-content: flex-start</h2>
     <section>
         <div class="container flex-start">
             <div class="item">1</div>
@@ -22,20 +44,9 @@
         </div>
     </section>
 
-    <!-- TESTE2 - align-items: flex-end -->
-    <!-- Alinha os itens no final do eixo transversal (parte inferior no caso do layout horizontal) -->
-    <h2>TESTE2 - align-items: flex-end</h2>
-    <section>
-        <div class="container flex-end">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-        </div>
-    </section>
-
-    <!-- TESTE3 - align-items: center -->
-    <!-- Alinha os itens no centro do eixo transversal -->
-    <h2>TESTE3 - align-items: center</h2>
+    <!-- TESTE4 - justify-content: center -->
+    <!-- justify-content: center alinha os itens no centro do eixo principal. -->
+    <h2>TESTE4 - justify-content: center</h2>
     <section>
         <div class="container center">
             <div class="item">1</div>
@@ -44,25 +55,82 @@
         </div>
     </section>
 
-    <!-- TESTE4 - align-items: baseline -->
-    <!-- Alinha os itens com base na linha de base dos itens, ou seja, alinha as linhas de texto -->
-    <h2>TESTE4 - align-items: baseline</h2>
+    <!-- TESTE5 - justify-content: space-between -->
+    <!-- justify-content: space-between distribui os itens com espaçamento igual entre eles, mas sem espaço nas extremidades. -->
+    <h2>TESTE5 - justify-content: space-between</h2>
     <section>
-        <div class="container baseline">
+        <div class="container space-between">
             <div class="item">1</div>
-            <div class="item" style="height: 80px;">2</div>
+            <div class="item">2</div>
             <div class="item">3</div>
         </div>
     </section>
 
-    <!-- TESTE5 - align-items: stretch -->
-    <!-- Os itens se esticam para preencher o contêiner ao longo do eixo transversal (vertical) -->
-    <h2>TESTE5 - align-items: stretch</h2>
+    <!-- TESTE6 - flex-wrap: wrap -->
+    <!-- flex-wrap: wrap permite que os itens que não cabem em uma linha (ou coluna) se movam para a próxima linha (ou coluna). -->
+    <h2>TESTE6 - flex-wrap: wrap</h2>
     <section>
-        <div class="container stretch">
+        <div class="container wrap">
             <div class="item">1</div>
             <div class="item">2</div>
             <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+    </section>
+
+    <!-- TESTE7 - order -->
+    <!-- order altera a ordem dos itens dentro do contêiner, independentemente de sua ordem no HTML. -->
+    <h2>TESTE7 - order</h2>
+    <section>
+        <div class="container">
+            <div class="item" style="order: 2;">1</div>
+            <div class="item" style="order: 1;">2</div>
+            <div class="item" style="order: 3;">3</div>
+        </div>
+    </section>
+
+    <!-- TESTE8 - flex-grow -->
+    <!-- flex-grow permite que os itens cresçam para ocupar o espaço disponível no contêiner. -->
+    <h2>TESTE8 - flex-grow</h2>
+    <section>
+        <div class="container">
+            <div class="item" style="flex-grow: 1;">1</div>
+            <div class="item" style="flex-grow: 2;">2</div>
+            <div class="item" style="flex-grow: 3;">3</div>
+        </div>
+    </section>
+
+    <!-- TESTE9 - flex-shrink -->
+    <!-- flex-shrink permite que os itens encolham quando o espaço disponível for insuficiente. -->
+    <h2>TESTE9 - flex-shrink</h2>
+    <section>
+        <div class="container" style="width: 300px;">
+            <div class="item" style="flex-shrink: 1;">1</div>
+            <div class="item" style="flex-shrink: 2;">2</div>
+            <div class="item" style="flex-shrink: 3;">3</div>
+        </div>
+    </section>
+
+    <!-- TESTE10 - flex-basis -->
+    <!-- flex-basis define o tamanho inicial dos itens antes de qualquer crescimento ou encolhimento. -->
+    <h2>TESTE10 - flex-basis</h2>
+    <section>
+        <div class="container">
+            <div class="item" style="flex-basis: 100px;">1</div>
+            <div class="item" style="flex-basis: 150px;">2</div>
+            <div class="item" style="flex-basis: 200px;">3</div>
+        </div>
+    </section>
+
+    <!-- TESTE11 - align-self -->
+    <!-- align-self permite que um item seja alinhado individualmente no eixo transversal, sobrepondo a configuração de align-items do contêiner. -->
+    <h2>TESTE11 - align-self</h2>
+    <section>
+        <div class="container stretch">
+            <div class="item" style="align-self: flex-start;">1</div>
+            <div class="item" style="align-self: center;">2</div>
+            <div class="item" style="align-self: flex-end;">3</div>
         </div>
     </section>
 
